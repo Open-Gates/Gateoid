@@ -120,7 +120,7 @@ async def has_non_pinned(channel):
     return False
 
 @bot.command(help="Clear X messages.")
-@commands.has_role(ogid.mods)
+@commands.has_role(ogid.mod)
 async def clear(ctx, amt: int):
     amt += 1
     count = 0
