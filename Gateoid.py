@@ -28,22 +28,21 @@ async def on_member_join(member):
     message = getText("welcome").format(member.mention)
     channel = bot.get_channel(ogid.welcome)
     await channel.send(message)
-    message = '➕ Yay, {} just joined Open Gates!'.format(member.mention)
+    message = '➕ {} joined.'.format(member.mention)
     channel = bot.get_channel(ogid.usertraffic)
     await channel.send(message)
 
 @bot.event
 async def on_member_remove(member):
     """Informs the moderators when someone leaves."""
-    message = '➖ Aww, {} just left Open Gates.'.format(member.mention)
+    message = '➖ {} left.'.format(member.mention)
     channel = bot.get_channel(ogid.usertraffic)
     await channel.send(message)
 
 @bot.event
 async def on_member_update(before, after):
     if not checkRoles(before, ogid.members) and checkRoles(after, ogid.members):
-        await bot.get_channel(ogid.general).send(getText("verified").format(after, ogid.aboutus, ogid.introductions, ogid.botspam))
-        await bot.get_channel(ogid.general).send("testing")
+        await bot.get_channel(ogid.general).send(getText("verified").format(after))
         return
 
 ### Bot chat
@@ -139,7 +138,7 @@ async def clear(ctx, amt: int):
 ### Run bot
 @bot.event
 async def on_ready():
-    game = discord.Game("Animal Crossing: New Horizons")
+    game = discord.Game("with Amy's feelings.")
     await bot.change_presence(status=discord.Status.idle, activity=game)
     print(bot.user.name + ' is running.')
     
