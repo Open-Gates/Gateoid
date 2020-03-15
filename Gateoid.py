@@ -40,7 +40,7 @@ async def on_member_remove(member):
 
 @bot.event
 async def on_member_update(before, after):
-    if not checkRoles(before, ogid.member) and checkRoles(after, ogid.member):
+    if not checkRoles(before, ogid.members) and checkRoles(after, ogid.members):
         await bot.get_channel(ogid.general).send(getText("verified").format(after, ogid.aboutus, ogid.introductions, ogid.botspam))
         await bot.get_channel(ogid.general).send("testing")
         return
@@ -66,7 +66,7 @@ async def on_message(message):
 
 ### Automatic creation of channels
 @bot.command()
-@commands.has_role(ogid.member)
+@commands.has_role(ogid.members)
 async def topic(ctx, ucc):
         category = None
         for cat in ctx.guild.categories:
@@ -81,7 +81,7 @@ async def topic(ctx, ucc):
         await channel.send("**{} please let us know what this channel is for! :-)**".format(ctx.message.author.mention, channel.name))
 
 @bot.command()
-@commands.has_role(ogid.member)
+@commands.has_role(ogid.members)
 async def game(ctx, game):
         category = None
         for cat in ctx.guild.categories:
@@ -96,7 +96,7 @@ async def game(ctx, game):
         await channel.send("**{} please let us know what this channel is about! :-)** Share a link to the game, let us know on which platform you play, if you're looking for trades, etc.".format(ctx.message.author.mention, channel.name))
         
 @bot.command()
-@commands.has_role(ogid.mod)
+@commands.has_role(ogid.mods)
 async def mod(ctx, mcc):
         category = None
         for cat in ctx.guild.categories:
@@ -121,7 +121,7 @@ async def has_non_pinned(channel):
     return False
 
 @bot.command(help="Clear X messages.")
-@commands.has_role(ogid.mod)
+@commands.has_role(ogid.mods)
 async def clear(ctx, amt: int):
     amt += 1
     count = 0
