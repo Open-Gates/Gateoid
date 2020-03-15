@@ -1,0 +1,15 @@
+Hey there, {0}! Welcome to **Open Gates**!
+
+Normally, Gateoid, your friendly neighbourhood Open Gates bot, would be writing this post!
+He is, however, otherwise occupied (read, his house is dead and won't be revived until after the move).
+
+Some things you can do in this server:
+- Read all about us in <#{1}>;
+- Introduce yourself in <#{2}>;
+- Talk about your favourite games in their dedicated channels;
+- Show us photos of your favourite animals;
+- Chat about anything and everything in here;
+- Lean your chair back just enough to get that thrill;
+- Talk to me in <#{3}> when you get lonely.
+
+Have fun!

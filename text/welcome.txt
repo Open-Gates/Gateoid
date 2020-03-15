@@ -1,0 +1,5 @@
+Hi there, {0}, welcome to **Open Gates**!
+
+I am your friendly neighbourhood bot, *Gateoid*.
+
+One of ~~my humans~~ __the moderators__ will be with you shortly.
