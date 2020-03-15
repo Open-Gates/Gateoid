@@ -28,14 +28,14 @@ async def on_member_join(member):
     channel = bot.get_channel(ogid.welcome)
     await channel.send(message)
     message = '➕ Yay, {} just joined Open Gates!'.format(member.mention)
-    channel = bot.get_channel(ogid.traffic)
+    channel = bot.get_channel(ogid.usertraffic)
     await channel.send(message)
 
 @bot.event
 async def on_member_remove(member):
     """Informs the moderators when someone leaves."""
     message = '➖ Aww, {} just left Open Gates.'.format(member.mention)
-    channel = bot.get_channel(ogid.traffic)
+    channel = bot.get_channel(ogid.usertraffic)
     await channel.send(message)
 
 @bot.event
