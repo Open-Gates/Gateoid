@@ -40,7 +40,7 @@ async def on_member_remove(member):
 
 @bot.event
 async def on_member_update(before, after):
-    if not checkRoles(before, ogid.members) and checkRoles(after, ogid.members):
+    if not checkRoles(before, ogid.member) and checkRoles(after, ogid.member):
         await bot.get_channel(ogid.general).send(getText("verified").format(after, ogid.aboutus, ogid.introductions, ogid.botspam))
         return
 
